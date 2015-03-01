@@ -4,6 +4,20 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     // Task configuration.
+    
+    sass: {                              // Task 
+      dist: {                            // Target 
+        options: {                       // Target options 
+          style: 'expanded'     
+          
+          },
+        
+        files: {                         // Dictionary of files 
+          'css/jdrops.css': 'scss/jdrops.scss'    // 'destination': 'source'           
+        }
+      }
+    },
+    
     jshint: {
       options: {
         curly: true,
@@ -31,6 +45,8 @@ module.exports = function(grunt) {
       files: ['test/**/*.html']
     },
     watch: {
+      sass: { files: '**/*.scss',
+			 tasks: ['sass'] },
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
@@ -46,6 +62,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  
+  // Plugins added for jdrop
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit']);
