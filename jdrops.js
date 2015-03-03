@@ -27,9 +27,12 @@ $(function() {
       var x = event.screenX;
       var y = event.screenY;
       /* 2. Then we need to create a new element on that position */
-      $(this).append('<div style="top: ' + (y - 100) + 'px; left: ' + x + 'px;">J</div>');
-      /* 3. We'll make it drop */
+      $(this).append('<div style="top: ' + (y - 100) + 'px; left: ' + x + 'px;"></div>'); //perhaps we can use .attr() method to add a unique id to each div created to handle multiple.
+      
+      /* 4. We'll make it grow! */
+        
+      /* 5. We'll make it drop */
 
-      /* 4. After, we'll make it do some fun stuff */
+      /* 6. After, we'll make it do some fun stuff */
     });
 });
