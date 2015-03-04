@@ -13,6 +13,14 @@
 * console.log( 'ready!' );
 */
 $(function() {
+  
+  function randomColor() {
+    var num = Math.floor(Math.random() * 5);
+    var colors = ["red","blue","yellow","green","magenta"];
+    
+    return colors[num];
+  }
+  
     console.log( 'ready!' );
 
     $('body').on('click', function(event) {
@@ -27,7 +35,7 @@ $(function() {
       var x = event.screenX;
       var y = event.screenY;
       /* 2. Then we need to create a new element on that position */
-      $(this).append('<div style="top: ' + (y - 100) + 'px; left: ' + x + 'px;"></div>'); //perhaps we can use .attr() method to add a unique id to each div created to handle multiple.
+      $(this).append('<div style="top: ' + (y - 100) + 'px; left: ' + x + 'px; background-color:'+randomColor()+';"></div>'); //perhaps we can use .attr() method to add a unique id to each div created to handle multiple.
       
       /* 4. We'll make it grow! */
         
