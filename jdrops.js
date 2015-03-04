@@ -32,10 +32,10 @@ $(function() {
       /* 1. We need to get the position of the click */
       console.log(event);
       console.log(event.pageX, event.pageY);
-      var x = event.screenX;
-      var y = event.screenY;
+      var x = event.pageX - 25;
+      var y = event.pageY - 25;
       /* 2. Then we need to create a new element on that position */
-      $(this).append('<div style="top: ' + (y - 100) + 'px; left: ' + x + 'px; background-color:'+randomColor()+';"></div>'); //perhaps we can use .attr() method to add a unique id to each div created to handle multiple.
+      $(this).append('<div style="top: ' + y + 'px; left: ' + x + 'px; background-color:'+randomColor()+';"></div>'); //perhaps we can use .attr() method to add a unique id to each div created to handle multiple.
       
       /* 4. We'll make it grow! */
         
